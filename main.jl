@@ -70,8 +70,8 @@ norm = [(Integ.res_phi[i]/Integ.res_phi[1]) for i in 1:Integ.timesteps]
 plot(x_normalized, norm, color="red", lw=2.0)
 
 ## store data in a tabular format
-df2 = DataFrame(Length = "l", Gravity = "g", Mass = "m", Damping = "c", ϕ = "phi", ϕ_dot = "phi_dot", Δt = "delta_t", ts = "ts")
-df1 = DataFrame(Length = length, Gravity = gravity, Mass = mass, Damping = damping, ϕ = phi, ϕ_dot = phidot, Δt = delta_t, ts = timesteps)
+df2 = DataFrame(Length = "l", Gravity = "g", Mass = "m", Damping = "c", Stiffness = "k",  ϕ = "phi", ϕ_dot = "phi_dot", Δt = "delta_t", ts = "ts")
+df1 = DataFrame(Length = length, Gravity = gravity, Mass = mass, Damping = damping, Stiffness = stiffness, ϕ = phi, ϕ_dot = phidot, Δt = delta_t, ts = timesteps)
 df = DataFrame(A = x_normalized[1:Integ.timesteps], B = norm[1:Integ.timesteps])
 
 ## write the values onto CSV file
