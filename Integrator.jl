@@ -32,7 +32,7 @@ end
 function run_euler_step(int::Integrator, pendulum)
     #println("Running euler step")
     ###### (homework) ######
-    phi_double_dot = ((-1 * pendulum.g / pendulum.l) * sin(pendulum.phi)) - (pendulum.c * pendulum.phi_dot)
+    phi_double_dot = ((-1 * pendulum.g / pendulum.l) * sin(pendulum.phi)) - (pendulum.c * pendulum.phi_dot) - (pendulum.k * pendulum.phi)
     pendulum.phi_dot = pendulum.phi_dot + (int.delta_t * phi_double_dot)
     pendulum.phi =  pendulum.phi + (int.delta_t * pendulum.phi_dot)
 
