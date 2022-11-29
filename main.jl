@@ -26,12 +26,13 @@ length = 1.0
 gravity = 10.0
 mass = 1.0
 damping = 1.0
+stiffness = 300.0
 phi = 0.5
 phidot = 0.0
 delta_t = 0.02
 timesteps = 400
 
-pendulum = Dynsys.Math_pendulum(length, gravity, mass, damping, phi, phidot)
+pendulum = Dynsys.Math_pendulum(length, gravity, mass, damping, stiffness, phi, phidot)
 ## load integrator and memory for the results
 
 Integ = Dynsys.Integrator(delta_t,timesteps)
